@@ -31,13 +31,13 @@ public class TecnicoController {
 		return ResponseEntity.ok().body(tecnicoDto);
 	}
 
-	@GetMapping("/cpf")
+	/*@GetMapping("/cpf")
 	public ResponseEntity<TecnicoDto> findByCpf(@RequestBody TecnicoDto tecnicoDto) {
 		Tecnico tecnico = tecnicoService.findByCpf(tecnicoDto);
 		TecnicoDto newTecnicoDto = new TecnicoDto(tecnico);
 
 		return ResponseEntity.ok().body(newTecnicoDto);
-	}
+	}*/
 	
 	@GetMapping
 	public ResponseEntity<List<TecnicoDto>> findAll() {

@@ -6,9 +6,9 @@ import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.br.CPF;
 
-import com.luiz.os.model.Tecnico;
+import com.luiz.os.model.Cliente;
 
-public class TecnicoDto implements Serializable {
+public class ClienteDto implements Serializable {
 	
 	private static final long serialVersion = 1L;
 	
@@ -21,16 +21,16 @@ public class TecnicoDto implements Serializable {
 	@NotEmpty(message = "O campo PHONE é obrigatório")
 	private String phone;
 	
-	public TecnicoDto() {
+	public ClienteDto() {
 		super();
 	}
 
-	public TecnicoDto(Tecnico tecnico) {
+	public ClienteDto(Cliente cliente) {
 		super();
-		this.id = tecnico.getId();
-		this.name = tecnico.getName();
-		this.cpf = tecnico.getCpf();
-		this.phone = tecnico.getPhone();
+		this.id = id;
+		this.name = name;
+		this.cpf = cpf;
+		this.phone = phone;
 	}
 
 	public Integer getId() {
@@ -64,5 +64,5 @@ public class TecnicoDto implements Serializable {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
+	
 }

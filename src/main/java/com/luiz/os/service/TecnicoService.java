@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.luiz.os.dto.TecnicoDto;
 import com.luiz.os.exception.ObjectNotFoundException;
 import com.luiz.os.model.Tecnico;
+import com.luiz.os.repository.PessoaRepository;
 import com.luiz.os.repository.TecnicoRepository;
 
 import javax.validation.Valid;
@@ -20,6 +21,9 @@ public class TecnicoService {
 	
 	@Autowired
 	private TecnicoRepository tecnicoRepository;
+	
+	@Autowired
+	private PessoaRepository pessoaRepository;
 	
 	public Tecnico findById(Integer id) {
 		
@@ -68,7 +72,7 @@ public class TecnicoService {
 	}
 
 	public Pessoa findByCpf(TecnicoDto tecnicoDto) {
-		Pessoa tecnico = tecnicoRepository.findByCpf(tecnicoDto.getCpf());
+		Pessoa tecnico = pessoaRepository.findByCpf(tecnicoDto.getCpf());
 
 		if(tecnico != null) {
 			return tecnico;
