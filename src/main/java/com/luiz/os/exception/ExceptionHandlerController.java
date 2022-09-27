@@ -17,8 +17,8 @@ public class ExceptionHandlerController {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(standardError);
 	}
 
-	@ExceptionHandler(DataIntegrityViolationException.class)
-	public ResponseEntity<StandardError> objectNotFoundException(DataIntegrityViolationException e) {
+	@ExceptionHandler(DataIntegrityViolationExceptionOs.class)
+	public ResponseEntity<StandardError> objectNotFoundException(DataIntegrityViolationExceptionOs e) {
 		StandardError standardError = new StandardError(System.currentTimeMillis(), HttpStatus.BAD_REQUEST.value(), e.getMessage());
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(standardError);
 	}
