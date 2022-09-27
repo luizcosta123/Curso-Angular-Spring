@@ -15,7 +15,7 @@ public class Tecnico extends Pessoa implements Serializable {
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "tecnico")
-	private List<OrdemServico> ordemServicoList = new ArrayList<>();
+	private List<Os> ordemServicoList = new ArrayList<>();
 
 	public Tecnico() {
 		super();
@@ -25,11 +25,11 @@ public class Tecnico extends Pessoa implements Serializable {
 		super(id, name, cpf, phone);
 	}
 
-	public List<OrdemServico> getOrdemServicoList() {
+	public List<Os> getOrdemServicoList() {
 		return ordemServicoList;
 	}
 
-	public void setOrdemServicoList(List<OrdemServico> ordemServicoList) {
+	public void setOrdemServicoList(List<Os> ordemServicoList) {
 		this.ordemServicoList = ordemServicoList;
 	}
 
