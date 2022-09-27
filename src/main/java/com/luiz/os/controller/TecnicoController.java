@@ -16,6 +16,7 @@ import com.luiz.os.service.TecnicoService;
 
 import javax.validation.Valid;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/tecnicos")
 public class TecnicoController {
