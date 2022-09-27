@@ -27,10 +27,10 @@ public class ClienteDto implements Serializable {
 
 	public ClienteDto(Cliente cliente) {
 		super();
-		this.id = id;
-		this.name = name;
-		this.cpf = cpf;
-		this.phone = phone;
+		this.id = cliente.getId();
+		this.name = cliente.getName();
+		this.cpf = cliente.getCpf();
+		this.phone = cliente.getPhone();
 	}
 
 	public Integer getId() {
