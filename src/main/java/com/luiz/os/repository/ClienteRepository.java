@@ -7,5 +7,7 @@ import com.luiz.os.model.Cliente;
 
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
+	
+	Cliente findByCpf(String cpf);
 
 }
