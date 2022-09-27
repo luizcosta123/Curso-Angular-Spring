@@ -3,7 +3,7 @@ package com.luiz.os.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.luiz.os.exception.DataIntegrityViolationException;
+import com.luiz.os.exception.DataIntegrityViolationExceptionOs;
 import com.luiz.os.model.Pessoa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,7 +41,7 @@ public class TecnicoService {
 	
 	public Tecnico create(TecnicoDto tecnicoDto) {
 		if(findByCpf(tecnicoDto) != null) {
-			throw new DataIntegrityViolationException("CPF já cadastrado no banco de dados!");
+			throw new DataIntegrityViolationExceptionOs("CPF já cadastrado no banco de dados!");
 		}
 
 		return tecnicoRepository.save(new Tecnico(null, tecnicoDto.getName(), tecnicoDto.getCpf(), tecnicoDto.getPhone()));
@@ -65,7 +65,7 @@ public class TecnicoService {
 		Tecnico tecnico = findById(id);
 
 		if(tecnico.getOrdemServicoList().size() > 0) {
-			throw new DataIntegrityViolationException("Técnico possui Ordens de Serviço, não pode ser deletado!");
+			throw new DataIntegrityViolationExceptionOs("Técnico possui Ordens de Serviço, não pode ser deletado!");
 		}
 
 		tecnicoRepository.deleteById(id);
