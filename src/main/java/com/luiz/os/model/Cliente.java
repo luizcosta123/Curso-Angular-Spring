@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 public class Cliente extends Pessoa {
 	
 	@OneToMany(mappedBy = "cliente")
-	private List<OrdemServico> ordemServicoList = new ArrayList<>();
+	private List<Os> ordemServicoList = new ArrayList<>();
 
 	public Cliente() {
 		super();
@@ -20,11 +20,11 @@ public class Cliente extends Pessoa {
 		super(id, name, cpf, phone);
 	}
 
-	public List<OrdemServico> getOrdemServicoList() {
+	public List<Os> getOrdemServicoList() {
 		return ordemServicoList;
 	}
 
-	public void setOrdemServicoList(List<OrdemServico> ordemServicoList) {
+	public void setOrdemServicoList(List<Os> ordemServicoList) {
 		this.ordemServicoList = ordemServicoList;
 	}
 
